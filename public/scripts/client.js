@@ -63,3 +63,16 @@ const renderTweets = function(tweets) {
 }
 
 renderTweets(data);
+
+// on client tweet submission, post the text data to /tweets/ route
+$('.new-tweet-form').on('submit', function(event) {
+  event.preventDefault();
+  $.ajax({
+      url: '/tweets/',
+      method: 'POST',
+      data: $(this).serialize()
+    })
+    .then(response => {
+      console.log(response);
+    });
+});
