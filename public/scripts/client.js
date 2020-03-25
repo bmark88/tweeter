@@ -59,20 +59,34 @@ const renderTweets = function(tweets) {
     tweetElements.push(createTweetElement(tweet))
   }
 
-  $('#tweet-container').append(tweetElements.join(''));
+  // renders the tweets with newest appearing at the top using .reverse()
+  $('#tweet-container').append(tweetElements.reverse().join(''));
 }
 
-renderTweets(data);
+// renderTweets(data);
 
 // on client tweet submission, post the text data to /tweets/ route
 $('.new-tweet-form').on('submit', function(event) {
   event.preventDefault();
   $.ajax({
-      url: '/tweets/',
-      method: 'POST',
-      data: $(this).serialize()
+    url: '/tweets/',
+    method: 'POST',
+    data: $(this).serialize()
+  })
+    .then(function() {
+      console.log(this.data);
     })
-    .then(response => {
-      console.log(response);
-    });
 });
+
+const loadTweets = () => {
+  $.ajax({
+    url: '/tweets/',
+    type: 'GET',
+    dataType: "json"
+  })
+    .then(response => {
+      renderTweets(response);
+    })
+};
+
+loadTweets();
