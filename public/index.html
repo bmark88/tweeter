@@ -21,7 +21,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js" defer></script>
+  <script type="text/javascript" src="/scripts/client.js" defer>
+  </script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js" defer>
+  </script>
 </head>
 
 <body>
@@ -47,27 +50,15 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" class="new-tweet-form">
           <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea></textarea>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <button type="submit" class="tweet-button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
       </section>
       <section id="tweet-container">
-        <article>
-          <header>
-            <img src="../images/doge.gif" alt="doge" height="125" width="125">
-            NotNewton
-            <p class="right handle">@BradleyMark</p>
-          </header>
-          <p>If I have seen further it is by standing on the shoulders of giants</p>
-          <footer>
-            10 days ago <span class="tweet-icons"> <span>&#9873</span><span>&#128257</span><span>&#9829</span></span>
-          </footer>
-        </article>
       </section>
     </div>
   </main>
 </body>
-<script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
 </html>
