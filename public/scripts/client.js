@@ -5,77 +5,95 @@
  */
 
 $(() => {
-  const escape = function (str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+  loadTweets();
+  $('#new-tweet-form').on('submit', onSubmit);
+
+  $('.write-tweet').on('click', onShowTweetInput);
+});
+
+let tweetFormHidden = true;
+const onShowTweetInput = function () {
+  console.log('here')
+  if (tweetFormHidden === true) {
+    $('#new-tweet-form').slideUp(300);
+    tweetFormHidden = false;
+  } else {
+    $('#new-tweet-form').slideDown(300);
+    $("#tweet-text").focus();
+    tweetFormHidden = true;
   }
+}
 
-  const createTweetElement = (tweetData) => {
-    const { name, avatars, handle } = tweetData.user;
-    const { text } = tweetData.content;
-    const { created_at } = tweetData;
-
-    const currentTweet = `
-    <article class="tweet">
-      <header>
-          <img src="${avatars}" alt="doge" height="125" width="125">
-          ${name}
-          <p class="right handle">${handle}</p>
-      </header>
-      <p>${escape(text)}</p>
-      <footer>
-        ${created_at} <span class="tweet-icons"> <span>&#9873</span><span>&#128257</span><span>&#9829</span></span>
-      </footer>
-    </article>
-  `;
-
-    return currentTweet;
-  };
-
-  const renderTweets = function (tweets) {
-    const tweetElements = [];
-
-    for (let tweet of tweets) {
-      tweetElements.push(createTweetElement(tweet))
-    }
-
-    // renders the tweets with newest appearing at the top using .reverse()
-    $('#tweet-container').html(tweetElements.reverse().join(''));
-  }
-
-  const loadTweets = () => {
+const onSubmit = function (event) {
+  event.preventDefault();
+  const charCount = $('#tweet-text').val().length;
+  
+  if (charCount !== 0 && charCount <= 140) {
     $.ajax({
       url: '/tweets/',
-      type: 'GET',
-      dataType: "json",
+      type: 'POST',
+      data: $(this).serialize(),
       success: (response) => {
-        renderTweets(response);
+        $('.error').hide(200);
+        postNewTweet();
       }
     })
+  } else {
+    $('.error').slideDown(500)
+  }
+}
+
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+const createTweetElement = (tweetData) => {
+  const { name, avatars, handle } = tweetData.user;
+  const { text } = tweetData.content;
+  const { created_at } = tweetData;
+
+  const currentTweet = `
+  <article class="tweet">
+    <header>
+      <img src="${avatars}" alt="doge" height="125" width="125">
+      ${name}
+      <p class="right handle">${handle}</p>
+    </header>
+    <p>${escape(text)}</p>
+    <footer>
+      ${created_at} <span class="tweet-icons"> <span>&#9873</span><span>&#128257</span><span>&#9829</span></span>
+    </footer>
+  </article>
+`;
+
+  return currentTweet;
+};
+
+const renderTweets = function (tweets) {
+  const tweetElements = [];
+
+  for (let tweet of tweets) {
+    tweetElements.push(createTweetElement(tweet))
   }
 
-  loadTweets();
-  // on client tweet submission, post the text data to /tweets/ route
-  $('.new-tweet-form').submit(function (event) {
-    event.preventDefault();
-    if ($('#tweet-text').val().length !== 0 && $('#tweet-text').val().length <= 140) {
-      $.ajax({
-        url: '/tweets/',
-        type: 'POST',
-        data: $(this).serialize(),
-        success: (response) => {
-          // removes this error-exists class if there was an error existing previously
-          $('.error').removeClass('error-exists');
-          loadTweets();
-        }
-      })
-    } else {
-        // displays an error message to input a correct char limit length
-      $('.error')
-        .addClass('error-exists')
-        .slideDown(1000)
+  $('#tweet-container').html(tweetElements.reverse().join(''));
+}
+
+const loadTweets = () => {
+  $.ajax({
+    url: '/tweets/',
+    type: 'GET',
+    dataType: "json",
+    success: (response) => {
+      renderTweets(response);
     }
-  });
-  
-});
+  })
+}
+
+const postNewTweet = () => {
+  $('#tweet-text').val('');
+  $('.counter').val('140')
+  loadTweets();
+}
