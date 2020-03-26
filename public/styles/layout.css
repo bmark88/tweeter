@@ -23,10 +23,61 @@ body {
 
 main { 
   background-color: #f4f1ec;
-  position: relative;
   margin: auto;
+  position: relative;
   width: 90%;
 }
+
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
+ * Responsive design media queries
  */
+
+/* nav components */
+@media only screen and (max-width: 1099px) {
+  nav {
+    background-color: transparent;
+  }
+
+  .profile-image {
+    padding-top: 120px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+/* nav and header components */
+  body header {
+    width: 50%  ;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .profile-image {
+    background-image: url("https://i.ytimg.com/vi/2v3YSRqWP0A/maxresdefault.jpg");
+    margin: 210px 3rem;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    border-radius: 25%;
+  }
+
+  .profile-image h2 {
+    padding-bottom: 30px;
+  }
+  
+  #avatar {
+    position: relative;
+  }
+
+/* new-tweet components for tweet submission button */
+  .new-tweet {
+    padding-top: 12rem;
+    padding-right: 3.75rem;
+  }
+
+/* tweet-list components */
+  #tweet-container {
+    width: 95%;
+  }
+}

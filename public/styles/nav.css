@@ -1,32 +1,48 @@
 nav {
-  position: fixed;
-  height: 120px;
-  width: 100%;
-  z-index: 10000;
   background-color: #4056A1;
   color: #FFFFFF;
-  font-family: 'Bungee', sans-serif;
+  height: 120px;
+  padding: 1.5em;
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 10000;
 }
 
-nav span {
-  margin: 1.5em;
+nav .logo {
+  font-family: 'Bungee', sans-serif;
 }
 
-.left {
-  float: left;
+.bounce {
+  -moz-animation: bounce .8s infinite;
+  -webkit-animation: bounce .8s infinite;
+  animation: bounce .8s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(88deg)
+  }
+  40% {
+    transform: translateY(-15px) rotate(88deg)
+  }
+  60% {
+    transform: translateY(0px) rotate(88deg)
+  }
 }
 
 .name {
   color: white;
 }
 
-.right {
+.write-tweet {
   float: right;
 }
 
-@media (max-width: 525px) {
-  .right {
-    position: absolute;
-  }
+.tweet-pointer {
+  color: red;
+  font-size: 2em;
+  margin-right: 2.25em;
+  position: absolute;
+  right: 0;
 }
