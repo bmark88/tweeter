@@ -5,11 +5,11 @@
  */
 
 $(() => {
-  const escape =  function(str) {
+  const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }  
+  }
 
   const createTweetElement = (tweetData) => {
     const { name, avatars, handle } = tweetData.user;
@@ -56,7 +56,6 @@ $(() => {
   }
 
   loadTweets();
-
   // on client tweet submission, post the text data to /tweets/ route
   $('.new-tweet-form').submit(function (event) {
     event.preventDefault();
@@ -66,10 +65,17 @@ $(() => {
         type: 'POST',
         data: $(this).serialize(),
         success: (response) => {
+          // removes this error-exists class if there was an error existing previously
+          $('.error').removeClass('error-exists');
           loadTweets();
         }
       })
-    } 
+    } else {
+        // displays an error message to input a correct char limit length
+      $('.error')
+        .addClass('error-exists')
+        .slideDown(1000)
+    }
   });
-
+  
 });

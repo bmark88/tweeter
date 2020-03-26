@@ -26,6 +26,18 @@ textarea {
   margin-top: 5px;
 }
 
+.error {
+  color: red;
+  font-family: 'Bungee', sans-serif;
+  font-size: 30px;
+  visibility: hidden;
+  font-weight: lighter;
+}
+
+.error-exists {
+  visibility: visible;
+}
+
 .over-char-limit {
   color: red;
 }

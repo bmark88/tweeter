@@ -50,7 +50,8 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" class="new-tweet-form">
           <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <span class="error">ERROR! <b>🐦TWEETYBIRD🐦</b> WANTS YOU TO ENTER A TWEET BETWEEN 1 AND 140 CHARACTERS.</span>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?" maxlength="140"></textarea>
           <button type="submit" class="tweet-button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
