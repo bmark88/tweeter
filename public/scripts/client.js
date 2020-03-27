@@ -116,12 +116,14 @@ const scrollToTop = function () {
   scrollToBottom();
 
   $(window).scroll(function(){
-    if ($(this).scrollTop() > 500) {
+    if ($(this).scrollTop() > 325) {
       $('.scroll-bottom').fadeOut(500);
       $('.scroll-top').fadeIn(500);
+      $('nav').addClass('black-text');
     } else {
       $('.scroll-bottom').fadeIn(500);
       $('.scroll-top').fadeOut(500);
+      $('nav').removeClass('black-text');
     }
   });
 };

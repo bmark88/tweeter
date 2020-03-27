@@ -13,6 +13,10 @@ nav .logo {
   font-family: 'Bungee', sans-serif;
 }
 
+.black-text {
+  color: black;
+}
+
 .bounce {
   -moz-animation: bounce .8s infinite;
   -webkit-animation: bounce .8s infinite;
