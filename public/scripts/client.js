@@ -8,11 +8,12 @@ $(() => {
   loadTweets();
   $('#new-tweet-form').on('submit', onSubmit);
   $('.write-tweet').on('click', onShowTweetInput);
+  scrollToTop();
+  displayButtonShadow;
 });
 
 let tweetFormHidden = true;
 const onShowTweetInput = () => {
-  console.log('here');
   if (tweetFormHidden === true) {
     $('#new-tweet-form').slideUp(300);
     tweetFormHidden = false;
@@ -33,7 +34,8 @@ const escape = function(str) {
 const createTweetElement = (tweetData) => {
   const { name, avatars, handle } = tweetData.user;
   const { text } = tweetData.content;
-  const { created_at } = tweetData;
+  let { created_at } = tweetData;
+  created_at = new Date(created_at).toString().slice(0,25)
 
   const currentTweet = `
   <article class="tweet">
@@ -96,4 +98,31 @@ const onSubmit = function(event) {
   } else {
     $('.error').slideDown(500);
   }
+};
+
+// stretch functions below
+const scrollToBottom = function() {
+  $('.scroll-bottom').on('click', function() {
+    $('html,body').animate({scrollTop: $(document).height()}, 1000)
+    return;
+  })
+};
+
+const scrollToTop = function () {
+  $('.scroll-top').on('click', () => {
+    $('html, body').animate({scrollTop : 0},800);
+    return;
+  });
+
+  scrollToBottom();
+
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 500) {
+      $('.scroll-bottom').fadeOut(500);
+      $('.scroll-top').fadeIn(500);
+    } else {
+      $('.scroll-bottom').fadeIn(500);
+      $('.scroll-top').fadeOut(500);
+    }
+  });
 };

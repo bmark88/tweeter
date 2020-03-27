@@ -18,6 +18,7 @@ body header {
   background-image: url("https://i.ytimg.com/vi/2v3YSRqWP0A/maxresdefault.jpg");
   text-align: center;
   padding-top: 120px;
+  position: fixed;
 }
 
 .profile-image h2 {

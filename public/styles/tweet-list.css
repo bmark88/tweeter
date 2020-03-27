@@ -3,7 +3,32 @@
   position: absolute;
   right: 2em;
   top: 1em;
-  visibility: hidden;
+  display: none;
+}
+
+.scroll-bottom {
+  font-size: 50px;
+  color: gray;
+  position: absolute;
+}
+
+.scroll-bottom:hover {
+  text-shadow: 5px 5px;
+}
+
+.scroll-top {
+  bottom: 0;
+  color: gray;
+  display: none;
+  font-size: 50px;
+  margin: 0.5em;
+  position: fixed;
+  right: 0;
+  z-index: 1000;
+}
+
+.scroll-top:hover {
+  text-shadow: 5px 5px;
 }
 
 #tweet-container {
@@ -18,11 +43,11 @@
 
 #tweet-container article:hover {
   box-shadow: 5px 5px rgba(146, 128, 194, 0.596);
-  text-shadow: 0.25px 0.25px;
+  text-shadow: 1px 1px;
 }
 
 #tweet-container article:hover .handle {
-  visibility: visible;
+  display: block;
 }
 
 #tweet-container header {
@@ -52,6 +77,19 @@
   float: right;
   font-size: 25px;
   margin-top: 0;
+  display: none;
+}
+
+#tweet-container .tweet-icons:hover {
+  float: right;
+  font-size: 25px;
+  color: red;
+  margin-top: 0;
+  display: none;
+}
+
+#tweet-container article:hover .tweet-icons {
+  display: block;
 }
   
 #tweet-container span {
