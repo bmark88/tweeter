@@ -6,19 +6,18 @@
 
 $(() => {
   loadTweets();
-  $('#new-tweet-form').on('submit', onSubmit);
   $('.write-tweet').on('click', onShowTweetInput);
+  $('#new-tweet-form').on('submit', onSubmit);
   scrollToTop();
-  displayButtonShadow;
 });
 
 let tweetFormHidden = true;
 const onShowTweetInput = () => {
   if (tweetFormHidden === true) {
-    $('#new-tweet-form').slideUp(300);
+    $('#new-tweet-form').slideDown(300);
     tweetFormHidden = false;
   } else {
-    $('#new-tweet-form').slideDown(300);
+    $('#new-tweet-form').slideUp(300);
     $("#tweet-text").focus();
     tweetFormHidden = true;
   }
