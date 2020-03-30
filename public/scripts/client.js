@@ -15,10 +15,10 @@ let tweetFormHidden = true;
 const onShowTweetInput = () => {
   if (tweetFormHidden === true) {
     $('#new-tweet-form').slideDown(300);
+    $("#tweet-text").focus();
     tweetFormHidden = false;
   } else {
     $('#new-tweet-form').slideUp(300);
-    $("#tweet-text").focus();
     tweetFormHidden = true;
   }
 };
