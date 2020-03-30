@@ -4,16 +4,14 @@
   margin-top: 5px;
 }
 
+/* char limit error message hidden by default */
+/* see client.js for jquery effect to unhide error message */
 .error {
   color: red;
   font-family: 'Bungee', sans-serif;
   font-size: 30px;
   display: none;
   font-weight: lighter;
-}
-
-.error-exists {
-  display: block;
 }
 
 .new-tweet {

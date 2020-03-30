@@ -11,6 +11,8 @@ $(() => {
   scrollToTop();
 });
 
+// all declared functions have been removed from the document.ready
+// section to allow for more organized & relevant code structure
 let tweetFormHidden = true;
 const onShowTweetInput = () => {
   if (tweetFormHidden === true) {
@@ -23,6 +25,7 @@ const onShowTweetInput = () => {
   }
 };
 
+// used to sanitize tweet entries, prevents malicious code
 const escape = function(str) {
   let div = document.createElement('div');
 
@@ -60,6 +63,7 @@ const renderTweets = (tweets) => {
     tweetElements.push(createTweetElement(tweet));
   }
 
+  // array in reverse to account for chronological order of tweets
   $('#tweet-container').html(tweetElements.reverse().join(''));
 };
 
@@ -74,6 +78,8 @@ const loadTweets = () => {
   });
 };
 
+// posting a new tweet resets the textarea value and char counter
+// then reloads the tweets in chronological order
 const postNewTweet = () => {
   $('#tweet-text').val('');
   $('.counter').val('140');
@@ -84,6 +90,8 @@ const onSubmit = function(event) {
   event.preventDefault();
   const charCount = $('#tweet-text').val().length;
 
+  // error message hidden by default in CSS
+  // slideDown() used to create jquery effect as required per instructions
   if (charCount !== 0 && charCount <= 140) {
     $.ajax({
       url: '/tweets/',
@@ -100,6 +108,9 @@ const onSubmit = function(event) {
 };
 
 // stretch functions below
+
+// scrollToBottom to scroll to  bottom of screen if 
+// the user's scroll bar is near the top
 const scrollToBottom = function() {
   $('.scroll-bottom').on('click', function() {
     $('html,body').animate({scrollTop: $(document).height()}, 1000)
@@ -107,12 +118,17 @@ const scrollToBottom = function() {
   })
 };
 
+// scrollToTop to scroll to  bottom of screen if the 
+// user's scroll bar is at a low enough position in the browser
 const scrollToTop = function () {
   $('.scroll-top').on('click', () => {
     $('html, body').animate({scrollTop : 0},800);
     return;
   });
 
+  // scrollToBottom is called in scrollToTop to allow for the scrollTop
+  // method to be called for only one function once the document is ready
+  // (this is done to ensure performance needs are not hindered)
   scrollToBottom();
 
   $(window).scroll(function(){
