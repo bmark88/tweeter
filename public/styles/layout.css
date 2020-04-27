@@ -55,12 +55,12 @@ main {
   }
 
   .profile-image {
-    background-image: url("https://i.ytimg.com/vi/2v3YSRqWP0A/maxresdefault.jpg");
+    background-color: #4056A1;
     margin: 210px 3rem;
     padding: 20px;
     width: 300px;
     height: 300px;
-    border-radius: 25%;
+    border-radius: 5%;
   }
 
   .profile-image h2 {

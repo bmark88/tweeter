@@ -2,7 +2,7 @@ body>header:first-of-type {
   width: 100%;
   text-align: center;
   margin-top: 120px;
-  background-image: url("https://i.ytimg.com/vi/2v3YSRqWP0A/maxresdefault.jpg");
+  background-color: #4056A1;
   opacity: 80%;
 }
 
@@ -15,7 +15,7 @@ body header {
 }
 
 .profile-image {
-  background-image: url("https://i.ytimg.com/vi/2v3YSRqWP0A/maxresdefault.jpg");
+  background-color: #4056A1;
   text-align: center;
   padding-top: 120px;
   position: fixed;
