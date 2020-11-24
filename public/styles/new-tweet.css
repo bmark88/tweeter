@@ -1,5 +1,11 @@
 .tweet {
   background-color: #f4f1ec;
+  width: 100%;
+}
+
+.tweet > header {
+  display: flex;
+  align-items: center;
 }
 
 .counter {
@@ -38,6 +44,7 @@
   font-size: 20px;
   margin-top: 5px;
   padding: 4px;
+  cursor: pointer;
 }
 
 #new-tweet-form {

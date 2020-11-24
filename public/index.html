@@ -36,39 +36,38 @@
     <div class="write-tweet"><b>Write</b> a new tweet</div>
     <div class="tweet-pointer bounce" class="right bounce">&#187</div>
   </nav>
-  <div class="flex-container">
-    <header>
-      <div class="profile-image">
-        <img src="../images/profile-hex.jpg" alt="doge" height="200" width="200" id="avatar">
-              <div class="name">
-        <h2>Your Name</h2>
-      </div>
-      </div>
+  
+  <!-- Page-specific (main) content here -->
+  <main>
+    <header class='profile-image'>
+      <img 
+        src="../images/profile-hex.jpg" 
+        alt="avatar" 
+        height="200" 
+        width="200" 
+        id="avatar"
+      />
+      <h2>Your Name</h2>
     </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <div>
-        <section class="new-tweet">
-          <form method="POST" action="/tweets/" id="new-tweet-form">
-            <h2>Compose Tweet</h2>
-            <label for="tweet-text"></label>
-            <p class="error">
-              ERROR! <b>🐦TWEETYBIRD🐦</b> WANTS YOU TO ENTER A TWEET BETWEEN 1 AND 140 CHARACTERS.
-            </p>
-            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-            <button type="submit" class="tweet-button">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </form>
-        </section>
-
-        <section id="tweet-container">
-          <!--This will be filled with tweets from the tweet database-->
-        </section>
-        <div class="scroll-top">🐣⬆️</div>
+    <section id='tweets'>
+      <div class="new-tweet">
+        <form method="POST" action="/tweets/" id="new-tweet-form">
+          <h2>Compose Tweet</h2>
+          <label for="tweet-text"></label>
+          <p class="error">
+            ERROR! <b>🐦TWEETYBIRD🐦</b> WANTS YOU TO ENTER A TWEET BETWEEN 1 AND 140 CHARACTERS.
+          </p>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <button type="submit" class="tweet-button">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </form>
       </div>
-    </main>
-  </div>
+      <div id="tweet-container">
+        <!--This will be filled with tweets from the tweet database-->
+      </div>
+    </section>
+    <div class="scroll-top">🐣⬆️</div>
+  </main>
 </body>
 
 </html>

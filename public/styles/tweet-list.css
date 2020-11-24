@@ -25,18 +25,25 @@
   transform: translate(-5px, 2px);
 }
 
+#tweets {
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 #tweet-container {
-  margin-top: 15px;
+  margin: 1rem auto;
+  /* width: 90%; */
 }
 
 #tweet-container article {
   border: solid;
   margin-bottom: 1em;
   position: relative;
+  transition: all 350ms;
 }
 
 #tweet-container article:hover {
-  box-shadow: 5px 5px rgba(146, 128, 194, 0.596);
+  box-shadow: 0.5rem 0.5rem rgba(146, 128, 194, 0.596);
   text-shadow: 1px 1px;
 }
 
@@ -45,16 +52,12 @@
 }
 
 #tweet-container header {
-  margin: 1.5em;
-}
-
-#tweet-container img {
-  border-radius: 50%;
+  padding: 1.5em;
 }
 
 #tweet-container footer {
   border-top: solid;
-  font-size: 0.5em;
+  font-size: 1rem;
   margin: 0 auto;
   padding-top: 1em;
   padding-bottom: 2em;
@@ -74,12 +77,11 @@
   display: none;
 }
 
-#tweet-container .tweet-icons:hover {
-  float: right;
+#tweet-container .tweet-icons span:hover {
   font-size: 25px;
   color: red;
   margin-top: 0;
-  display: none;
+  cursor: pointer;
 }
 
 #tweet-container article:hover .tweet-icons {

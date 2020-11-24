@@ -15,7 +15,6 @@ nav {
 .logo {
   font-family: 'Bungee', sans-serif;
   font-size: 2.25rem;
-  cursor: pointer;
 }
 
 .bounce {
@@ -31,13 +30,6 @@ nav {
   40% {
     transform: translateY(-15px) rotate(90deg)
   }
-  60% {
-    /* transform: translateY(0px) rotate(88deg) */
-  }
-}
-
-.name {
-  color: white;
 }
 
 .write-tweet {
@@ -52,4 +44,5 @@ nav {
   position: absolute;
   bottom: -0.5rem;
   right: 0;
+  cursor: pointer;
 }

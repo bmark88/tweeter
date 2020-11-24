@@ -7,6 +7,7 @@
 $(() => {
   loadTweets();
   $('.write-tweet').on('click', onShowTweetInput);
+  $('.tweet-pointer').on('click', onShowTweetInput);
   $('#new-tweet-form').on('submit', onSubmit);
   scrollToTop();
 });
@@ -42,7 +43,7 @@ const createTweetElement = (tweetData) => {
   const currentTweet = `
   <article class="tweet">
     <header>
-      <img src="${avatars}" alt="avatar" height="125" width="125">
+      <img src="${avatars}" alt="avatar">
       ${name}
       <p class="right handle">${handle}</p>
     </header>
