@@ -42,7 +42,7 @@ const createTweetElement = (tweetData) => {
   const currentTweet = `
   <article class="tweet">
     <header>
-      <img src="${avatars}" alt="doge" height="125" width="125">
+      <img src="${avatars}" alt="avatar" height="125" width="125">
       ${name}
       <p class="right handle">${handle}</p>
     </header>
@@ -133,13 +133,9 @@ const scrollToTop = function () {
 
   $(window).scroll(function(){
     if ($(this).scrollTop() > 325) {
-      $('.scroll-bottom').fadeOut(500);
       $('.scroll-top').fadeIn(500);
-      $('nav').addClass('black-text');
     } else {
-      $('.scroll-bottom').fadeIn(500);
       $('.scroll-top').fadeOut(500);
-      $('nav').removeClass('black-text');
     }
   });
 };
