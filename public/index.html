@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -34,20 +35,20 @@
   <nav>
     <span class="logo">tweeter</span>
     <div class="write-tweet"><b>Write</b> a new tweet</div>
-    <div class="tweet-pointer bounce" class="right bounce">&#187</div>
+    <div class="tweet-pointer bounce" class="right bounce"><i class="fa fa-angle-double-down"></i></div>
   </nav>
   
   <!-- Page-specific (main) content here -->
   <main>
     <header class='profile-image'>
-      <img 
-        src="../images/profile-hex.jpg" 
-        alt="avatar" 
-        height="200" 
-        width="200" 
-        id="avatar"
-      />
-      <h2>Your Name</h2>
+      <div class='sticky'>
+        <img 
+          src="../images/profile-hex.jpg" 
+          alt="avatar" 
+          id="avatar"
+        />
+        <h2>Your Name</h2>
+      </div>
     </header>
     <section id='tweets'>
       <div class="new-tweet">

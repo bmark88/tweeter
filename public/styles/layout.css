@@ -32,7 +32,6 @@ main {
 /* nav components */
 @media only screen and (max-width: 1099px) {
   .profile-image {
-    padding-top: 120px;
     position: relative;
   }
 }
@@ -57,11 +56,9 @@ main {
   }
 
   .profile-image {
-    margin: 210px 3rem;
-    padding: 20px;
-    width: 300px;
-    height: 300px;
-    border-radius: 5%;
+    margin: 85px 2rem;
+    width: 400px;
+    border-radius: 1rem;
   }
 
   #avatar {

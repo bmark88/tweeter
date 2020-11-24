@@ -49,7 +49,7 @@ const createTweetElement = (tweetData) => {
     </header>
     <p>${escape(text)}</p>
     <footer>
-      ${created_at} <span class="tweet-icons"> <span>&#9873</span><span>&#128257</span><span>&#9829</span></span>
+      ${created_at} <span class="tweet-icons"><i class="fa fa-flag"></i><i class="fa fa-retweet"></i><i class="fa fa-heart"></i></span>
     </footer>
   </article>
 `;

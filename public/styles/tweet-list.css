@@ -15,14 +15,14 @@
   position: fixed;
   right: 0;
   z-index: 1000;
-  text-shadow: -5px 2px 5px;
+  text-shadow: 0px 2px 5px;
   cursor: pointer;
   transition: all 150ms;
 }
 
-.scroll-top:hover {
+.scroll-top:active {
   text-shadow: none;
-  transform: translate(-5px, 2px);
+  transform: translate(-3px, 2px);
 }
 
 #tweets {
@@ -32,7 +32,6 @@
 
 #tweet-container {
   margin: 1rem auto;
-  /* width: 90%; */
 }
 
 #tweet-container article {
@@ -73,19 +72,18 @@
 #tweet-container .tweet-icons {
   float: right;
   font-size: 25px;
-  margin-top: 0;
   display: none;
 }
 
-#tweet-container .tweet-icons span:hover {
-  font-size: 25px;
-  color: red;
-  margin-top: 0;
+#tweet-container .tweet-icons i:hover {
+  color: #6075C9;
   cursor: pointer;
 }
 
 #tweet-container article:hover .tweet-icons {
-  display: block;
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
 }
   
 #tweet-container span {

@@ -4,15 +4,24 @@ body>header:first-of-type {
 }
 
 .profile-image {
-  background-color: #4056A1;
   text-align: center;
   padding-top: 120px;
-  /* position: fixed; */
-  position: sticky;
+}
+
+.sticky {
+  background-color: #4056A1;
+  padding: 1rem 0;
+  /* border: 0.25rem solid #4056A1; */
 }
 
 .profile-image h2 {
-  margin: 0;
-  padding: 1.5rem 0;
   color: #FFFFFF;
+}
+
+@media (min-width: 1100px) {
+  .sticky {
+    position: fixed;
+    width: 400px;
+    border-radius: 1rem;
+  }
 }

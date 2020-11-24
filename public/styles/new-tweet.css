@@ -38,13 +38,22 @@
 
 .tweet-button {
   background-color: #4056A1;
-  border: 0px;
-  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 0.8rem 1.5rem;
+  color: #FFFFFF;
   font-family: 'Bungee', sans-serif;
   font-size: 20px;
   margin-top: 5px;
-  padding: 4px;
   cursor: pointer;
+  box-shadow: 0px 2px 5px #000000;
+  transition: all 150ms;
+  outline: none;
+}
+
+.tweet-button:active {
+  transform: translate(-3px, 2px);
+  box-shadow: none;
 }
 
 #new-tweet-form {
@@ -58,4 +67,5 @@
   height: 50px;
   padding-top: 18px;
   resize: none;
+  outline: none;
 }
