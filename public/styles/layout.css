@@ -16,13 +16,13 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #F7C4A5;
+  background-image: url('../images/gplay.jpg');
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 main { 
-  background-color: #f4f1ec;
   margin: auto;
   position: relative;
   width: 90%;
@@ -55,7 +55,6 @@ main {
   }
 
   .profile-image {
-    background-color: #4056A1;
     margin: 210px 3rem;
     padding: 20px;
     width: 300px;
@@ -63,10 +62,6 @@ main {
     border-radius: 5%;
   }
 
-  .profile-image h2 {
-    padding-bottom: 30px;
-  }
-  
   #avatar {
     position: relative;
   }

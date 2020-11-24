@@ -1,6 +1,9 @@
 nav {
   background-color: #4056A1;
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 120px;
   padding: 1.5em;
   position: fixed;
@@ -9,12 +12,10 @@ nav {
   z-index: 10000;
 }
 
-nav .logo {
+.logo {
   font-family: 'Bungee', sans-serif;
-}
-
-.black-text {
-  color: black;
+  font-size: 2.25rem;
+  cursor: pointer;
 }
 
 .bounce {
@@ -25,13 +26,13 @@ nav .logo {
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) rotate(88deg)
+    transform: translateY(0) rotate(85deg)
   }
   40% {
-    transform: translateY(-15px) rotate(88deg)
+    transform: translateY(-15px) rotate(90deg)
   }
   60% {
-    transform: translateY(0px) rotate(88deg)
+    /* transform: translateY(0px) rotate(88deg) */
   }
 }
 
@@ -41,12 +42,14 @@ nav .logo {
 
 .write-tweet {
   float: right;
+  cursor: pointer;
 }
 
 .tweet-pointer {
   color: red;
-  font-size: 2em;
-  margin-right: 2.25em;
+  font-size: 3.5rem;
+  margin-right: 7rem;
   position: absolute;
+  bottom: -0.5rem;
   right: 0;
 }

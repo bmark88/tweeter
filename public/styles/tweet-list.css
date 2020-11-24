@@ -6,16 +6,6 @@
   display: none;
 }
 
-.scroll-bottom {
-  font-size: 50px;
-  color: gray;
-  position: absolute;
-}
-
-.scroll-bottom:hover {
-  text-shadow: 5px 5px;
-}
-
 .scroll-top {
   bottom: 0;
   color: gray;
@@ -25,10 +15,14 @@
   position: fixed;
   right: 0;
   z-index: 1000;
+  text-shadow: -5px 2px 5px;
+  cursor: pointer;
+  transition: all 150ms;
 }
 
 .scroll-top:hover {
-  text-shadow: 5px 5px;
+  text-shadow: none;
+  transform: translate(-5px, 2px);
 }
 
 #tweet-container {
